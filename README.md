@@ -43,8 +43,8 @@ Le dataset contient **14 colonnes** décrivant les caractéristiques démographi
 
 ##  Outils utilisés
 
-- Python (>= 3.13)
-- Jupyter Notebook
+- `Python (>= 3.13)`
+- `Jupyter Notebook`
 - `pandas`, `numpy`, `scikit-learn`
 - `matplotlib`, `seaborn`
 - `xgboost`
@@ -52,9 +52,26 @@ Le dataset contient **14 colonnes** décrivant les caractéristiques démographi
 
 ---
 
-## ▶ Lancer le projet
+## Installation des dépendances
+Clonez ce dépôt puis installez les dépendances à l’aide du fichier `requirements.txt` :
 
-1. Cloner le dépôt :
+1. Cloner le dépôt
+
 ```bash
 git clone https://github.com/Narcisse-sudo/Churn-bank.git
-cd Projet/Churn_Bank
+cd Churn-bank
+```
+
+2. Installer les dépendances
+# Installer Poetry (si pas déjà installé)  
+# Voir la documentation officielle : https://python-poetry.org/docs/#installation
+
+```bash
+poetry install
+```
+3. Activer l’environnement virtuel Poetry 
+```bash
+poetry shell
+```
+
+
