@@ -63,8 +63,8 @@ cd Churn-bank
 ```
 
 2. Installer les dépendances
-## Installer Poetry (si pas déjà installé)  
-### Voir la documentation officielle : https://python-poetry.org/docs/#installation
+#### Installer Poetry (si pas déjà installé)  
+#### Voir la documentation officielle : https://python-poetry.org/docs/#installation
 
 ```bash
 poetry install
