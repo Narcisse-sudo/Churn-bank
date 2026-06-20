@@ -1,0 +1,7 @@
+# Normalise les fins de ligne en LF (cohérence Linux/Docker/Streamlit Cloud).
+* text=auto eol=lf
+
+# Fichiers binaires : pas de conversion.
+*.joblib binary
+*.csv text eol=lf
+*.ipynb text eol=lf

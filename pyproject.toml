@@ -1,26 +1,60 @@
 [project]
-name = "Churn_bank"
-version = "0.1.0"
-description = ""
-authors = [
-    {name = "Narcisse",email = "dalkonarcisse19@gmail.com"}
-]
+name = "churn-bank"
+version = "1.0.0"
+description = "Détection de l'attrition client bancaire : EDA, modélisation, API FastAPI et démo Streamlit."
+authors = [{ name = "Narcisse", email = "dalkonarcisse19@gmail.com" }]
 readme = "README.md"
-requires-python = ">=3.13"
+requires-python = ">=3.10"
 dependencies = [
-    "xgboost (>=3.0.3,<4.0.0)",
-    "matplotlib (>=3.10.5,<4.0.0)",
-    "numpy (>=2.3.2,<3.0.0)",
-    "pandas (>=2.3.1,<3.0.0)",
-    "seaborn (>=0.13.2,<0.14.0)",
-    "scikit-learn (>=1.7.1,<2.0.0)"
+    "numpy>=1.26",
+    "pandas>=2.2",
+    "scikit-learn>=1.4",
+    "xgboost>=2.0",
+    "joblib>=1.4",
+    "matplotlib>=3.8",
+    "seaborn>=0.13",
+    "fastapi>=0.110",
+    "uvicorn[standard]>=0.27",
+    "python-multipart>=0.0.9",
+    "pydantic>=2.6",
+    "streamlit>=1.31",
 ]
 
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0",
+    "httpx>=0.27",
+    "ruff>=0.4",
+    "black>=24.2",
+]
+notebooks = [
+    "jupyter>=1.0",
+    "ipykernel>=6.29",
+]
 
 [build-system]
 requires = ["poetry-core>=2.0.0,<3.0.0"]
 build-backend = "poetry.core.masonry.api"
 
+[tool.poetry]
+packages = [{ include = "churn", from = "src" }]
 
-[tool.poetry.requires-plugins]
-poetry-plugin-export = ">=1.8"
+[tool.black]
+line-length = 100
+target-version = ["py310", "py311"]
+extend-exclude = "/notebooks/"
+
+[tool.ruff]
+line-length = 100
+extend-exclude = ["notebooks"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.ruff.lint.flake8-bugbear]
+extend-immutable-calls = ["fastapi.File", "fastapi.Query", "fastapi.Form", "fastapi.Depends"]
+
+[tool.pytest.ini_options]
+minversion = "8.0"
+addopts = "-q"
+pythonpath = ["src", "."]
