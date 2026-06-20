@@ -9,7 +9,7 @@ pour permettre aux équipes de rétention d'agir **avant** le départ. De l'anal
 exploratoire au modèle servi via une **API FastAPI** et une **démo Streamlit** déployable
 en un clic.
 
-> 🔗 **Démo en ligne :** _<ajoutez ici votre lien Streamlit Cloud après déploiement>_
+> 🔗 **Démo en ligne :** _https://churn-bank-narcisse.streamlit.app/_
 
 ---
 
